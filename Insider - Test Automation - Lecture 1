@@ -1,3 +1,5 @@
+#####for chrome
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver import Keys
@@ -21,3 +23,61 @@ else:
     print("test basarısız")
 
     driver.quit()
+
+
+
+#####for edge
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver import Keys
+
+driver = webdriver.Edge()
+
+driver.get("https://www.google.com/")
+
+textarea = driver.find_element(By.CLASS_NAME, "gLFyf")
+
+textarea.send_keys("Insider")
+
+textarea.send_keys(Keys.ENTER)
+
+current_url = driver.current_url
+
+if "google.com" in current_url:
+    print("test başarılı")
+
+else:
+    print("test basarısız")
+
+    driver.quit()
+
+
+###test fail scenario
+
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver import Keys
+
+driver = webdriver.Edge()
+
+driver.get("https://www.youtube.com/")
+
+#textarea = driver.find_element(By.CLASS_NAME, "gLFyf")
+
+#textarea.send_keys("Insider")
+
+#textarea.send_keys(Keys.ENTER)
+
+current_url = driver.current_url
+
+if "google.com" in current_url:
+    print("test başarılı")
+
+else:
+    print("test basarısız")
+
+    driver.quit()
+
+
