@@ -1,0 +1,27 @@
+###Lecture - 2 Selenium
+
+###navbar-brand css selector
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+
+driver.get("https://www.useinsider.com")
+
+logo_element = driver.find_element(By.CSS_SELECTOR, '.navbar-brand')
+print("HREF BUDUR :", logo_element.get_attribute('href'))  #logonon bağlantısını yazdırır.
+
+
+current_url = driver.current_url
+
+if "google.com" in current_url:
+    print("Test Başarılı: Google ana sayfasına gidildi!")
+else:
+    print(f"Test Başarısız: Beklenen URL 'google.com', Ancak Alınan URL '{current_url}'")
+
+driver.quit()
+
+
+
+
